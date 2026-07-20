@@ -1,0 +1,63 @@
+/* Hero — Figma "Desktop - 13" (260:1277), 1440×856 artboard */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 856px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bg,
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  background: var(--hero-overlay);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  /* 1000px of content plus the gutter, so the headline holds one line at 1440 */
+  max-width: calc(1000px + var(--gutter) * 2);
+  margin-inline: auto;
+  padding: 120px var(--gutter) 60px;
+  text-align: center;
+  color: var(--text-inverse);
+}
+
+.title {
+  font-size: var(--fs-48);
+  font-weight: 700;
+  line-height: 1.45;
+  max-width: 1000px;
+}
+
+.subtitle {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 784px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 620px;
+  }
+
+  .content {
+    padding-top: 140px;
+    padding-bottom: 40px;
+  }
+}

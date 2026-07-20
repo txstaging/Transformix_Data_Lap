@@ -1,0 +1,71 @@
+/* Pill button — Figma components "larg" / "medium" / "small" (260:2043, 260:2051, 101:325) */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  border: 1.829px solid transparent;
+  font-family: var(--font-tajawal), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.046;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  box-shadow: 0 0.915px 2.744px 0 rgba(0, 0, 0, 0.2),
+    inset 0 3.658px 1.829px 0 rgba(255, 255, 255, 0.8);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.22),
+    inset 0 3.658px 1.829px 0 rgba(255, 255, 255, 0.8);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Variants ------------------------------------------------------ */
+.light {
+  background: var(--text-inverse);
+  border-color: var(--background-main);
+  color: var(--primary);
+}
+
+.primary {
+  background: var(--primary);
+  border-color: var(--blue-darker);
+  color: var(--text-inverse);
+}
+
+.primary:hover {
+  background: var(--blue-dark);
+}
+
+/* Sizes --------------------------------------------------------- */
+.sm {
+  width: 106px;
+  height: 40px;
+  font-size: 12px;
+}
+
+.md {
+  width: 200px;
+  height: 60px;
+  font-size: var(--fs-14);
+}
+
+.lg {
+  width: 234px;
+  height: 60px;
+  font-size: var(--fs-16);
+}
+
+@media (max-width: 640px) {
+  .md,
+  .lg {
+    height: 52px;
+  }
+}

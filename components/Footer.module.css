@@ -1,0 +1,170 @@
+/* Footer — Figma "Frame 1000011527" (260:1638) */
+.footer {
+  background: var(--blue-darker);
+  padding-block: 78px 34px;
+  font-family: var(--font-tajawal), system-ui, sans-serif;
+}
+
+/* Brand sits on the trailing edge with the link columns beside it,
+   leaving the artboard's empty run on the far side. */
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: clamp(40px, 10.3vw, 148px);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  order: 1;
+}
+
+.logo {
+  width: 133px;
+  height: 85px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tagline {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--white-normal);
+  text-align: center;
+}
+
+.cols {
+  display: flex;
+  gap: clamp(40px, 9.4vw, 135px);
+  flex-wrap: wrap;
+  order: 2;
+}
+
+.colTitle {
+  font-size: var(--fs-18);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--text-inverse);
+  margin-bottom: 16px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0.9;
+}
+
+.links a {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--white-normal);
+  transition: opacity 0.18s ease;
+}
+
+.links a:hover {
+  opacity: 0.7;
+}
+
+/* Contact rows — icon sits on the leading edge */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactRow span {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--white-normal);
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+}
+
+/* Twitter → LinkedIn → Facebook reads left-to-right on the artboard */
+.socials {
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.18s ease;
+}
+
+.socials a:hover {
+  opacity: 0.7;
+}
+
+.divider {
+  height: 1px;
+  margin-block: 48px 28px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.copyright {
+  font-size: var(--fs-14);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-inverse);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding-block: 56px 28px;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  .brand {
+    order: 0;
+    align-items: flex-start;
+  }
+
+  .tagline {
+    text-align: start;
+  }
+
+  .cols {
+    gap: 40px;
+  }
+
+  .divider {
+    margin-block: 36px 20px;
+  }
+}

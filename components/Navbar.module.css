@@ -1,0 +1,160 @@
+/* Header — Figma "Background+HorizontalBorder" (260:1283) */
+.header {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 30;
+  padding-inline: clamp(16px, 8.33vw, 120px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  height: 82px;
+  margin-inline: auto;
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 85px;
+  height: 54px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Desktop navigation ------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding-inline: 16px;
+  font-size: var(--fs-18);
+  font-weight: 400;
+  color: var(--text-inverse);
+  white-space: nowrap;
+  transition: opacity 0.18s ease;
+}
+
+.nav a:hover {
+  opacity: 0.75;
+}
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.caret {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.caret img {
+  width: 9.6px;
+  height: 5.07px;
+}
+
+.cta {
+  flex-shrink: 0;
+  width: 126px;
+  height: 47.557px;
+  font-size: var(--fs-14);
+}
+
+/* Only surfaces inside the mobile panel. Scoped so it outranks the
+   .button display rule coming from Button.module.css. */
+.nav .ctaMobile {
+  display: none;
+}
+
+/* Mobile toggle ------------------------------------------------- */
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  place-items: center;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.burger span + span {
+  margin-top: 4px;
+}
+
+.burgerOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 1100px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .burger {
+    display: grid;
+  }
+
+  /* Mobile panel */
+  .navOpen {
+    position: absolute;
+    inset-inline: clamp(16px, 8.33vw, 120px);
+    inset-block-start: 78px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 16px;
+    background: var(--blue-dark-active);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  }
+
+  .navOpen a {
+    padding: 12px 8px;
+    justify-content: flex-start;
+  }
+
+  .navOpen .ctaMobile {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 8px;
+  }
+}

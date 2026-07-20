@@ -1,0 +1,129 @@
+/* Growth CTA — Figma "Desktop - 9" (260:1451) */
+.section {
+  position: relative;
+  min-height: 622px;
+  display: flex;
+  align-items: center;
+  background: var(--cta-navy);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Two stacked noise fills, as on the artboard */
+.noise,
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-size: 511.5px 511.5px;
+  background-position: top left;
+  pointer-events: none;
+}
+
+.noise {
+  background-image: url("/assets/noise-1.png");
+  opacity: 0.2;
+}
+
+.noiseOverlay {
+  background-image: url("/assets/noise-2.png");
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+/* Faint wireframe cubes. Physical `left` on purpose — the artboard
+   anchors these to the left edge regardless of text direction. */
+.cubes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 620px;
+  pointer-events: none;
+}
+
+.cube {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.09);
+  transform: rotate(45deg);
+}
+
+.cube::after {
+  content: "";
+  position: absolute;
+  inset: 51.79% 51.79% -51.79% -51.79%;
+  border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.cubeLg {
+  width: 280px;
+  height: 280px;
+  top: 60px;
+  left: 96px;
+}
+
+.cubeSm {
+  width: 133px;
+  height: 133px;
+  top: 218px;
+  left: 388px;
+  border-width: 1px;
+}
+
+.cubeSm::after {
+  border-width: 1px;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  width: 100%;
+  text-align: start;
+}
+
+.inner {
+  margin-inline-start: auto;
+  max-width: 723px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 36px;
+}
+
+.title {
+  font-size: var(--fs-32);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-inverse);
+}
+
+.text {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-inverse);
+}
+
+@media (max-width: 900px) {
+  .section {
+    min-height: 0;
+    padding-block: 72px;
+  }
+
+  .cubes {
+    width: 100%;
+    opacity: 0.6;
+  }
+
+  .cubeSm {
+    display: none;
+  }
+
+  .inner {
+    margin-inline-start: 0;
+    max-width: 100%;
+  }
+}

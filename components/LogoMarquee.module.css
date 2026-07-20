@@ -1,0 +1,65 @@
+/* Client logo strip — Figma "Section" (260:1314) */
+.marquee {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  border-block-start: 1px solid rgba(255, 255, 255, 0.4);
+  border-block-end: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.track {
+  direction: ltr;
+  display: flex;
+  width: max-content;
+  animation: scroll 45s linear infinite;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cell {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  min-width: 288px;
+  height: 104px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Each logo keeps the crop Figma applied to its source image */
+.frame {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.frame img {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .cell {
+    min-width: 190px;
+    height: 84px;
+    padding: 16px;
+  }
+
+  .frame {
+    transform: scale(0.68);
+  }
+}

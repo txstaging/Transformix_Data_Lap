@@ -1,0 +1,122 @@
+/* AI team — Figma "Desktop - 4" (260:1463) */
+.section {
+  background: var(--background-main);
+  padding-block: 72px 130px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 46px;
+}
+
+.title {
+  font-size: var(--fs-32);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--blue-dark-hover);
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-18);
+  font-weight: 400;
+  color: var(--primary);
+  white-space: nowrap;
+  transition: opacity 0.18s ease;
+}
+
+.more:hover {
+  opacity: 0.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 27px 23px;
+  background: var(--background-card);
+  border: 1px solid var(--stroke-card);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 344 / 194;
+  width: 100%;
+  border: 0.3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumb img {
+  object-fit: cover;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-tajawal), system-ui, sans-serif;
+  font-size: var(--fs-20);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #131313;
+}
+
+.cardText {
+  font-family: var(--font-tajawal), system-ui, sans-serif;
+  font-size: var(--fs-16);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #606060;
+}
+
+.cardCta {
+  align-self: flex-start;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .section {
+    padding-block: 56px 72px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

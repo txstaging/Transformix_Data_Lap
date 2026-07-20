@@ -1,0 +1,133 @@
+/* Services — Figma "Desktop - 6" (260:1372) */
+.section {
+  background: var(--background-main);
+  padding-block: 120px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-size: var(--fs-48);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--blue-dark);
+}
+
+.subtitle {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 860px;
+}
+
+/* 2×2 grid with collapsed 1.5px borders, matching the artboard's
+   636px / 604px column split */
+.grid {
+  display: grid;
+  grid-template-columns: 636fr 604fr;
+  border: 1.5px solid var(--stroke);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px;
+  background: var(--background-main);
+  transition: background-color 0.2s ease;
+}
+
+.card:nth-child(2n) {
+  border-inline-start: 1.5px solid var(--stroke);
+}
+
+.card:nth-child(-n + 2) {
+  border-block-end: 1.5px solid var(--stroke);
+}
+
+.card:hover {
+  background: #fcfcfd;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.icon {
+  width: 102px;
+  height: 102px;
+  border-radius: 8px;
+  background: #ededed;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: start;
+}
+
+.cardTitle {
+  font-size: var(--fs-32);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--blue-dark);
+}
+
+.cardText {
+  font-size: var(--fs-24);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-block: 72px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 28px;
+  }
+
+  /* One column: only a horizontal rule between rows */
+  .card:nth-child(2n) {
+    border-inline-start: 0;
+  }
+
+  .card:not(:last-child) {
+    border-block-end: 1.5px solid var(--stroke);
+  }
+
+  .icon {
+    width: 76px;
+    height: 76px;
+  }
+}
