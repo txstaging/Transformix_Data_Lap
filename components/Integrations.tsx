@@ -2,23 +2,65 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./Integrations.module.css";
 
-const bullets = [
-  "تشغيل أكثر سلاسة وكفاءة",
-  "وحّد البيانات من مصادر متعددة في مكان واحد",
-  "طوّر عملياتك دون الحاجة إلى تغيير أنظمتك بالكامل",
+/**
+ * Platform cluster — Figma "Desktop - 73" (1626:4965).
+ *
+ * The canvas draws four of the nine wells as two merged "Union" blobs and the
+ * other five as standalone circles; every logo is then dropped on top at its
+ * own size. Positions are percentages of the 617 × 637 cluster so it scales as
+ * one piece.
+ */
+const CW = 617; // cluster width on the artboard
+const CH = 637; // cluster height
+
+const pct = (v: number, total: number) => `${(v / total) * 100}%`;
+
+type Logo = {
+  src: string;
+  alt: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  /** overflow crop the canvas applies to the source image */
+  crop?: { left: string; top: string; w: string; h: string };
+};
+
+const logos: Logo[] = [
+  { src: "/assets/int2-facebook.png", alt: "Facebook", x: 46, y: 53, w: 113, h: 111 },
+  { src: "/assets/int2-meta.png", alt: "Meta", x: 261, y: 51, w: 89, h: 85 },
+  { src: "/assets/int2-instagram.png", alt: "Instagram", x: 463, y: 47, w: 100, h: 100 },
+  {
+    src: "/assets/int2-tiktok.png",
+    alt: "TikTok",
+    x: 59,
+    y: 293,
+    w: 73,
+    h: 81,
+    crop: { left: "-0.77%", top: "0", w: "379.51%", h: "100%" },
+  },
+  { src: "/assets/int2-messenger.png", alt: "Messenger", x: 252, y: 267, w: 102, h: 102 },
+  { src: "/assets/int2-odoo.png", alt: "Odoo", x: 462, y: 289, w: 105, h: 33 },
+  { src: "/assets/int2-telegram.png", alt: "Telegram", x: 39, y: 484, w: 114, h: 114 },
+  {
+    src: "/assets/int2-zoho.png",
+    alt: "Zoho",
+    x: 246,
+    y: 494,
+    w: 142,
+    h: 64,
+    crop: { left: "0", top: "-61.99%", w: "100%", h: "221.4%" },
+  },
+  { src: "/assets/int2-whatsapp.png", alt: "WhatsApp", x: 476, y: 495, w: 92, h: 92 },
 ];
 
-// Laid out left-to-right, matching the canvas arrangement
-const platforms = [
-  { src: "/assets/int-odoo.png", alt: "Odoo", w: 105, h: 33 },
-  { src: "/assets/int-tiktok.png", alt: "TikTok", w: 123, h: 36 },
-  { src: "/assets/int-instagram.png", alt: "Instagram", w: 76, h: 76 },
-  { src: "/assets/int-telegram.png", alt: "Telegram", w: 101, h: 101 },
-  null, // centre cell — hexagon logo
-  { src: "/assets/int-whatsapp.png", alt: "WhatsApp", w: 91, h: 91 },
-  { src: "/assets/int-facebook.png", alt: "Facebook", w: 95, h: 95 },
-  { src: "/assets/int-salla.png", alt: "Zoho", w: 142, h: 64, cropped: true },
-  { src: "/assets/int-meta.png", alt: "Meta", w: 98, h: 98 },
+// The five wells the canvas draws as discrete circles (193px each)
+const wells = [
+  { x: 213, y: 4 },
+  { x: 419, y: 4 },
+  { x: 0, y: 237 },
+  { x: 0, y: 444 },
+  { x: 426, y: 444 },
 ];
 
 export default function Integrations() {
@@ -31,71 +73,56 @@ export default function Integrations() {
             لا نطلب منك البدء من الصفر. نطوّر حلولًا ذكية تتكامل مع منصاتك الحالية لتمنحك كفاءة أعلى
             وقرارات أسرع وتجربة تشغيل أكثر سلاسة.
           </p>
-
-          <ul className={styles.list}>
-            {bullets.map((bullet, i) => (
-              <li key={bullet}>
-                <div className={styles.item}>
-                  <span className={styles.check} aria-hidden="true">
-                    <Image src="/assets/check-mark.svg" alt="" width={16} height={13} />
-                  </span>
-                  <span>{bullet}</span>
-                </div>
-                {i < bullets.length - 1 && <div className={styles.rule} />}
-              </li>
-            ))}
-          </ul>
-
-          <Button size="lg" className={styles.cta} href="#contact">
-            تواصل معنا
+          <Button variant="primary" size="lg" className={styles.cta} href="#contact">
+            ابدء الان
           </Button>
         </div>
 
-        <div className={styles.gridWrap}>
-          <div className={styles.guides} aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
+        <div className={styles.cluster}>
+          <span className={`${styles.blob} ${styles.blobA}`} aria-hidden="true">
+            <Image src="/assets/int-blob-a.svg" alt="" fill sizes="401px" />
+          </span>
+          <span className={`${styles.blob} ${styles.blobB}`} aria-hidden="true">
+            <Image src="/assets/int-blob-b.svg" alt="" fill sizes="401px" />
+          </span>
 
-          <div className={styles.lines} aria-hidden="true">
-            <Image src="/assets/int-lines.svg" alt="" fill sizes="600px" />
-          </div>
+          {wells.map((well) => (
+            <span
+              className={styles.well}
+              key={`${well.x}-${well.y}`}
+              style={{ left: pct(well.x, CW), top: pct(well.y, CH) }}
+              aria-hidden="true"
+            />
+          ))}
 
-          <div className={styles.tiles}>
-            {platforms.map((platform, i) =>
-              platform === null ? (
-                <div className={`${styles.tile} ${styles.hex}`} key="hex">
-                  <div className={styles.hexShape}>
-                    <Image src="/assets/int-polygon.svg" alt="" width={177} height={177} />
-                  </div>
-                  <Image
-                    className={styles.hexLogo}
-                    src="/assets/int-center-logo.svg"
-                    alt="Transformix"
-                    width={70}
-                    height={70}
-                  />
-                </div>
-              ) : (
-                <div className={styles.tile} key={platform.alt + i}>
-                  {platform.cropped ? (
-                    <span className={styles.cropped}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={platform.src} alt={platform.alt} />
-                    </span>
-                  ) : (
-                    <Image
-                      src={platform.src}
-                      alt={platform.alt}
-                      width={platform.w}
-                      height={platform.h}
-                    />
-                  )}
-                </div>
-              )
-            )}
-          </div>
+          {logos.map((logo) => (
+            <span
+              className={styles.logo}
+              key={logo.alt}
+              style={{
+                left: pct(logo.x, CW),
+                top: pct(logo.y, CH),
+                width: pct(logo.w, CW),
+                height: pct(logo.h, CH),
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                style={
+                  logo.crop
+                    ? {
+                        left: logo.crop.left,
+                        top: logo.crop.top,
+                        width: logo.crop.w,
+                        height: logo.crop.h,
+                      }
+                    : { left: 0, top: 0, width: "100%", height: "100%" }
+                }
+              />
+            </span>
+          ))}
         </div>
       </div>
     </section>

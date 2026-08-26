@@ -6,22 +6,22 @@ const services = [
   {
     title: "تطوير الذكاء الاصطناعي التوليدي",
     text: "نطوّر أدوات ذكية قادرة على إنشاء المحتوى، الإجابة عن الأسئلة، والتفاعل مع المستخدمين.",
-    icon: "/assets/svc-icon-3.png",
+    icon: "/assets/svc-genai.png",
   },
   {
     title: "تقنيات الرؤية الحاسوبية",
     text: "نساعد الأنظمة على فهم الصور والفيديوهات واكتشاف العناصر والأنماط بداخلها.",
-    icon: "/assets/svc-icon-1.png",
+    icon: "/assets/svc-vision.png",
   },
   {
     title: "أتمتة العمليات بالذكاء الاصطناعي",
     text: "نحوّل المهام المتكررة إلى عمليات ذكية أسرع وأكثر دقة وأقل اعتمادًا على التدخل اليدوي.",
-    icon: "/assets/svc-icon-4.png",
+    icon: "/assets/svc-automation.png",
   },
   {
     title: "تطوير نماذج تعلُّم الآلة",
     text: "نبني نماذج تتعلم من البيانات لتوقع النتائج وتحسين القرارات بشكل مستمر.",
-    icon: "/assets/svc-icon-2.png",
+    icon: "/assets/svc-ml.png",
   },
 ];
 
@@ -41,9 +41,13 @@ export default function Services() {
           {services.map((service) => (
             <a href="#" className={styles.card} key={service.title}>
               <div className={styles.cardTop}>
-                <div className={styles.icon}>
-                  <Image src={service.icon} alt="" width={102} height={102} />
-                </div>
+                <span className={styles.icon}>
+                  <Image src={service.icon} alt="" width={100} height={100} />
+                </span>
+                {/* Revealed on hover, opposite the icon */}
+                <span className={styles.arrow} aria-hidden="true">
+                  <Image src="/assets/circle-arrow-left.svg" alt="" width={32} height={32} />
+                </span>
               </div>
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{service.title}</h3>

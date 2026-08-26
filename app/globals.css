@@ -11,6 +11,8 @@
   --blue-darker: #0a1836;
   --blue-light: #e8ecf5;
   --blue-light-hover: #dde3f0;
+  --blue-light-active: #b9c5df;
+
 
   /* Surfaces */
   --background-main: #ffffff;
@@ -20,6 +22,7 @@
   --testimonials-bg: #fafafa;
 
   /* Text */
+  --text-primary: #1a1a1a;
   --text-inverse: #ffffff;
   --text-inverse-li: #dadada;
   --text-secondary: #57585b;
@@ -30,6 +33,7 @@
   /* Lines */
   --stroke: #e5e7eb;
   --stroke-card: #dedede;
+  --gray-pill: #9a9a99;
 
   /* Layout */
   --container: 1240px;

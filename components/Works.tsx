@@ -2,33 +2,41 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./Works.module.css";
 
+/**
+ * Case studies — Figma "Desktop - 76" (1626:5038). Listed in visual RTL order:
+ * the first card sits top-right. `crop` reproduces the image-fill transform the
+ * canvas applies inside each card's plate.
+ */
 const works = [
-  { title: "مساعد ذكي لخدمة العملاء", image: "/assets/work-preview.png" },
-  { title: "مساعد ذكي لخدمة العملاء", image: "/assets/work-preview.png" },
-  { title: "مساعد ذكي لخدمة العملاء", image: "/assets/work-preview.png" },
-  { title: "مساعد ذكي لخدمة العملاء", image: "/assets/work-preview.png" },
+  {
+    title: "تحليل محادثات العملاء للكشف عن فرص النمو وتحسين المبيعات",
+    text: "ساعدت نتائج التحليل على تقديم توصيات عملية لتحسين الرسائل التسويقية، تطوير العروض والخدمات، ومعالجة نقاط الاحتكاك في رحلة التسجيل، بما يدعم البراند في زيادة فرص التحويل وتحسين كفاءة المبيعات.",
+    image: "/assets/work-2.png",
+    ratio: "590 / 277",
+    crop: { left: "-0.06%", top: "-33.21%", w: "100.11%", h: "159.93%" },
+  },
+  {
+    title: "وكيل تعليمي ذكي يدعم المعلم ويطوّر تجربة تعلم اللغات",
+    text: "قمنا بتطوير وكيل ذكاء اصطناعي مخصص لقطاع التعليم، يساعد المعلمين على أتمتة إعداد المحتوى التعليمي بما يشمل خطط الدروس، الاختبارات، والواجبات، كما يتيح للطلاب التفاعل معه يوميًا عبر محادثات نصية وصوتية.",
+    image: "/assets/work-1.png",
+    ratio: "590 / 277",
+    crop: { left: "-3.73%", top: "-8.25%", w: "103.73%", h: "124.36%" },
+  },
+  {
+    title: "من بيانات الموقع والمكالمات إلى قرارات تدعم نمو المبيعات",
+    text: "قمنا بتحليل بيانات الموقع والمكالمات لشركة Mermates لاكتشاف الأنماط السلوكية، فهم احتياجات العملاء، وتحديد نقاط التحسين التي تساعد على رفع كفاءة المبيعات وتحسين رحلة العميل.",
+    image: "/assets/work-4.png",
+    ratio: "590 / 229",
+    crop: { left: "-8.96%", top: "-50.14%", w: "120.91%", h: "233.06%" },
+  },
+  {
+    title: "تحليل محادثات العملاء للكشف عن فرص النمو وتحسين المبيعات",
+    text: "ساعدت نتائج التحليل على تقديم توصيات عملية لتحسين الرسائل التسويقية، تطوير العروض والخدمات، ومعالجة نقاط الاحتكاك في رحلة التسجيل، بما يدعم البراند في زيادة فرص التحويل وتحسين كفاءة المبيعات.",
+    image: "/assets/work-3.png",
+    ratio: "557 / 229",
+    crop: null,
+  },
 ];
-
-function WorkCard({ title, image }: { title: string; image: string }) {
-  return (
-    <a href="#" className={styles.card}>
-      <div className={styles.thumb}>
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="(max-width: 900px) 100vw, 600px"
-        />
-      </div>
-      <div className={styles.cardFooter}>
-        <h3 className={styles.cardTitle}>{title}</h3>
-        <span className={styles.cardIcon} aria-hidden="true">
-          <Image src="/assets/arrow-out.svg" alt="" width={22} height={22} />
-        </span>
-      </div>
-    </a>
-  );
-}
 
 export default function Works() {
   return (
@@ -40,24 +48,38 @@ export default function Works() {
             نطوّر منصات وأنظمة رقمية تجمع بين البيانات، الذكاء الاصطناعي، وتجربة المستخدم لتقديم
             منتجات عملية وقابلة للتوسع.
           </p>
-        </div>
-
-        <div className={styles.headerCta}>
-          <Button variant="primary" size="lg" className={styles.ctaButton} href="#contact">
-            تواصل معنا
+          <Button variant="primary" size="lg" className={styles.cta} href="#contact">
+            عرض المزيد
           </Button>
         </div>
 
-        <div className={styles.columns}>
-          {/* Leading (right) column — offset down on the artboard */}
-          <div className={styles.col}>
-            <WorkCard {...works[0]} />
-            <WorkCard {...works[1]} />
-          </div>
-          <div className={styles.col}>
-            <WorkCard {...works[2]} />
-            <WorkCard {...works[3]} />
-          </div>
+        <div className={styles.grid}>
+          {works.map((work, i) => (
+            <article className={styles.card} key={`${work.image}-${i}`}>
+              <h3 className={styles.cardTitle}>{work.title}</h3>
+              <p className={styles.cardText}>{work.text}</p>
+              <div className={styles.thumb} style={{ aspectRatio: work.ratio }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  style={
+                    work.crop
+                      ? {
+                          left: work.crop.left,
+                          top: work.crop.top,
+                          width: work.crop.w,
+                          height: work.crop.h,
+                        }
+                      : { left: 0, top: 0, width: "100%", height: "100%" }
+                  }
+                />
+              </div>
+              <a href="#" className={styles.arrow} aria-label={work.title}>
+                <Image src="/assets/circle-arrow-left.svg" alt="" width={46} height={46} />
+              </a>
+            </article>
+          ))}
         </div>
       </div>
     </section>

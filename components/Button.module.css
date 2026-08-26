@@ -12,19 +12,36 @@
   text-align: center;
   white-space: nowrap;
   max-width: 100%;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition: box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease,
+    color 0.18s ease;
   box-shadow: 0 0.915px 2.744px 0 rgba(0, 0, 0, 0.2),
     inset 0 3.658px 1.829px 0 rgba(255, 255, 255, 0.8);
 }
 
-.button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.22),
-    inset 0 3.658px 1.829px 0 rgba(255, 255, 255, 0.8);
+/* Hover / active — Figma variants "larg → Variant4" (260:2046) and
+   "larg → Variant3" (260:2048). Both swap the fill for the cyan radial
+   gradient, turn the label blue, and drop the resting border and drop shadow
+   for a single inner shadow. The gradient is the canvas's SVG radial mapped to
+   CSS: its transform puts the bright core at 48%/47% inside an ellipse of
+   roughly 63% × 96% of the pill. */
+.button:hover,
+.button:active {
+  background: radial-gradient(
+    ellipse 63% 96% at 48% 47%,
+    #2ac0d4 0%,
+    #45c8d9 12.5%,
+    #5fd0df 25%,
+    #95e0ea 50%,
+    #caeff4 75%,
+    #ffffff 100%
+  );
+  border-color: transparent;
+  color: var(--primary);
+  box-shadow: inset 0 3.658px 9.146px 0 rgba(0, 0, 0, 0.45);
 }
 
 .button:active {
-  transform: translateY(0);
+  box-shadow: inset 0 3.658px 10.06px 0 rgba(0, 0, 0, 0.75);
 }
 
 /* Variants ------------------------------------------------------ */
@@ -36,12 +53,8 @@
 
 .primary {
   background: var(--primary);
-  border-color: var(--blue-darker);
+  border-color: var(--blue-dark);
   color: var(--text-inverse);
-}
-
-.primary:hover {
-  background: var(--blue-dark);
 }
 
 /* Sizes --------------------------------------------------------- */

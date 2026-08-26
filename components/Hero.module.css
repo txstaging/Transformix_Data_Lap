@@ -1,63 +1,66 @@
-/* Hero — Figma "Desktop - 13" (260:1277), 1440×856 artboard */
+/* Hero — Figma "Desktop - 75" (1626:4667), 1440×1009 artboard on white */
 .hero {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 856px;
+  background: var(--background-main);
   overflow: hidden;
-  isolation: isolate;
-}
-
-.bg,
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.overlay {
-  background: var(--hero-overlay);
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 24px;
   width: 100%;
-  /* 1000px of content plus the gutter, so the headline holds one line at 1440 */
+  /* 1000px content block, top edge 164px down the artboard */
   max-width: calc(1000px + var(--gutter) * 2);
   margin-inline: auto;
-  padding: 120px var(--gutter) 60px;
+  padding: 82px var(--gutter) 0;
   text-align: center;
-  color: var(--text-inverse);
+  color: var(--text-primary);
 }
 
 .title {
-  font-size: var(--fs-48);
+  font-size: var(--fs-40);
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.4;
   max-width: 1000px;
 }
 
 .subtitle {
-  font-size: var(--fs-24);
-  font-weight: 400;
-  line-height: 1.6;
-  max-width: 784px;
+  font-size: var(--fs-18);
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 642px;
+}
+
+/* Video plate — 884 × 478 on the artboard, centred, top edge at y=455 */
+.videoWrap {
+  width: min(884px, calc(100% - var(--gutter) * 2));
+  aspect-ratio: 884 / 478;
+  margin: 64px auto 76px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--background-card);
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 900px) {
-  .hero {
-    min-height: 620px;
+  .content {
+    padding-top: 56px;
+    gap: 20px;
   }
 
-  .content {
-    padding-top: 140px;
-    padding-bottom: 40px;
+  .videoWrap {
+    margin: 48px auto 48px;
+    border-radius: 16px;
   }
 }

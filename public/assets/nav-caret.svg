@@ -1,3 +1,5 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 9.59999 5.0667" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M0.144247 0.168567C0.345708 -0.0463238 0.683223 -0.0572037 0.898103 0.144247L4.8 3.80228L8.70187 0.144247C8.9168 -0.0572037 9.2543 -0.0463238 9.45579 0.168567C9.65718 0.383458 9.6463 0.720972 9.43147 0.922423L5.16477 4.92246C4.95962 5.11478 4.64039 5.11478 4.43523 4.92246L0.168567 0.922423C-0.0463238 0.720972 -0.0572037 0.383458 0.144247 0.168567Z" fill="var(--fill-0, white)"/>
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Component 1">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M3.34425 6.56857C3.54571 6.35367 3.88322 6.34279 4.0981 6.54425L8 10.2023L11.9019 6.54425C12.1168 6.34279 12.4543 6.35367 12.6558 6.56857C12.8572 6.78346 12.8463 7.12097 12.6315 7.32242L8.36477 11.3225C8.15962 11.5148 7.84038 11.5148 7.63523 11.3225L3.36857 7.32242C3.15367 7.12097 3.14279 6.78346 3.34425 6.56857Z" fill="#1A1A1A"/>
+</g>
 </svg>

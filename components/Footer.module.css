@@ -5,12 +5,12 @@
   font-family: var(--font-tajawal), system-ui, sans-serif;
 }
 
-/* Brand sits on the trailing edge with the link columns beside it,
-   leaving the artboard's empty run on the far side. */
+/* Brand sits on the leading edge (right in RTL) with the link columns beside
+   it, leaving the artboard's empty run on the far side. */
 .top {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: clamp(40px, 10.3vw, 148px);
   flex-wrap: wrap;
 }

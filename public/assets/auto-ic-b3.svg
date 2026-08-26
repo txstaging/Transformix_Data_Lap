@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Image" clip-path="url(#clip0_0_14)">
+<path id="Vector" d="M35.9544 17.9772C35.9544 8.04867 27.9058 0 17.9772 0C8.04867 0 0 8.04867 0 17.9772C0 27.9058 8.04867 35.9544 17.9772 35.9544C27.9058 35.9544 35.9544 27.9058 35.9544 17.9772Z" fill="#FAF5FF"/>
+<g id="lucide/chart-line">
+<path id="Vector_2" d="M9 9V25C9 25.5304 9.21071 26.0391 9.58579 26.4142C9.96086 26.7893 10.4696 27 11 27H27M25 15L20 20L16 16L13 19" stroke="#1C4499" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_14">
+<rect width="36" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>

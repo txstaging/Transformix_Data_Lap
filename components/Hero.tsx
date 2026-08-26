@@ -1,24 +1,10 @@
-import Image from "next/image";
 import Navbar from "./Navbar";
 import Button from "./Button";
-import LogoMarquee from "./LogoMarquee";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.bg}>
-        <Image
-          src="/assets/hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-        />
-      </div>
-      <div className={styles.overlay} />
-
       <Navbar />
 
       <div className={styles.content}>
@@ -27,12 +13,24 @@ export default function Hero() {
           نستخدم البيانات والذكاء الاصطناعي لمساعدتك على تحسين الأداء، أتمتة العمليات، واتخاذ قرارات
           أكثر دقة.
         </p>
-        <Button size="lg" href="#contact">
+        <Button variant="primary" size="lg" href="#contact">
           تواصل معنا
         </Button>
       </div>
 
-      <LogoMarquee />
+      {/* 884 × 478 plate on the artboard — the video fills it and crops */}
+      <div className={styles.videoWrap}>
+        <video
+          className={styles.video}
+          src="/video/GettyImages-1349515892.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-label="Transformix"
+        />
+      </div>
     </section>
   );
 }

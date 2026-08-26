@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Image" clip-path="url(#clip0_0_26)">
+<path id="Vector" d="M35.9544 17.9772C35.9544 8.04867 27.9058 0 17.9772 0C8.04867 0 0 8.04867 0 17.9772C0 27.9058 8.04867 35.9544 17.9772 35.9544C27.9058 35.9544 35.9544 27.9058 35.9544 17.9772Z" fill="#FAF5FF"/>
+<g id="lucide/clock-alert">
+<path id="Vector_2" d="M18 12V18L22 20M26 18V23M26 27H26.01M27.25 14.2C26.4957 12.3614 25.2106 10.7892 23.5589 9.68412C21.9071 8.57905 19.9635 7.9912 17.9762 7.99561C15.9888 8.00001 14.0479 8.59646 12.401 9.70884C10.7541 10.8212 9.47608 12.3991 8.72992 14.241C7.98376 16.083 7.80335 18.1055 8.21171 20.0504C8.62008 21.9954 9.5987 23.7745 11.0227 25.1608C12.4467 26.5471 14.2514 27.4777 16.2066 27.8338C18.1618 28.1898 20.1787 27.9553 22 27.16" stroke="#57585B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_26">
+<rect width="36" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>

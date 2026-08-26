@@ -1,7 +1,7 @@
-/* Services — Figma "Desktop - 6" (260:1372) */
+/* Services — Figma "Desktop - 6" (1626:4760) */
 .section {
   background: var(--background-main);
-  padding-block: 120px;
+  padding-block: 120px 100px;
 }
 
 .header {
@@ -10,7 +10,7 @@
   align-items: center;
   gap: 24px;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 116px;
 }
 
 .title {
@@ -28,49 +28,43 @@
   max-width: 860px;
 }
 
-/* 2×2 grid with collapsed 1.5px borders, matching the artboard's
-   636px / 604px column split */
 .grid {
   display: grid;
-  grid-template-columns: 636fr 604fr;
-  border: 1.5px solid var(--stroke);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }
 
+/* 604 × 342 on the artboard: 40px padding, 1.5px hairline */
 .card {
   display: flex;
   flex-direction: column;
   gap: 32px;
   padding: 40px;
   background: var(--background-main);
-  transition: background-color 0.2s ease;
-}
-
-.card:nth-child(2n) {
-  border-inline-start: 1.5px solid var(--stroke);
-}
-
-.card:nth-child(-n + 2) {
-  border-block-end: 1.5px solid var(--stroke);
+  border: 1.5px solid var(--stroke);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  background: #fcfcfd;
+  border-color: var(--blue-light-active);
+  box-shadow: 0 12px 28px rgba(21, 51, 115, 0.08);
+  transform: translateY(-3px);
 }
 
 .cardTop {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
 }
 
 .icon {
-  width: 102px;
-  height: 102px;
+  display: block;
+  width: 100px;
+  height: 100px;
   border-radius: 8px;
-  background: #ededed;
   overflow: hidden;
   flex-shrink: 0;
+  background: #ededed;
 }
 
 .icon img {
@@ -79,11 +73,29 @@
   object-fit: cover;
 }
 
+/* Sits opposite the icon; the artboard leaves it unfilled at rest */
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .cardBody {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  text-align: start;
+  text-align: right;
 }
 
 .cardTitle {
@@ -102,32 +114,20 @@
 
 @media (max-width: 900px) {
   .section {
-    padding-block: 72px;
+    padding-block: 64px 56px;
   }
 
   .header {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
   .grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .card {
-    padding: 28px;
-  }
-
-  /* One column: only a horizontal rule between rows */
-  .card:nth-child(2n) {
-    border-inline-start: 0;
-  }
-
-  .card:not(:last-child) {
-    border-block-end: 1.5px solid var(--stroke);
-  }
-
-  .icon {
-    width: 76px;
-    height: 76px;
+    gap: 24px;
+    padding: 24px;
   }
 }

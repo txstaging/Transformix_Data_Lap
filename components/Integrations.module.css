@@ -1,223 +1,121 @@
-/* Integrations — Figma "Desktop - 11" (260:1508) */
+/* Integrations — Figma "Desktop - 73" (1626:4965) */
 .section {
-  background: var(--blue-dark-active);
-  padding-block: 138px;
+  background: var(--background-main);
+  padding-block: 100px;
 }
 
 .layout {
-  display: grid;
-  grid-template-columns: 532px 1fr;
+  display: flex;
   align-items: center;
-  gap: 106px;
+  justify-content: center;
+  gap: 125px;
 }
 
-/* Copy column (first in DOM = right in RTL) --------------------- */
+/* Logo cluster — 617 × 637 on the artboard --------------------- */
+.cluster {
+  position: relative;
+  direction: ltr;
+  flex: 0 1 617px;
+  max-width: 617px;
+  aspect-ratio: 617 / 637;
+}
+
+/* Merged wells the canvas draws behind four of the logos */
+.blob {
+  position: absolute;
+  width: 65.01%; /* 401.105 / 617 */
+  height: 63.27%; /* 403 / 637 */
+}
+
+.blobA {
+  left: 0.16%;
+  top: 2.2%;
+}
+
+.blobB {
+  left: 34.44%;
+  top: 33.99%;
+}
+
+/* Standalone 193px wells */
+.well {
+  position: absolute;
+  width: 31.28%; /* 193 / 617 */
+  height: 30.3%; /* 193 / 637 */
+  border-radius: 100px;
+  background: var(--background-card);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
+}
+
+.logo {
+  position: absolute;
+  overflow: hidden;
+  display: block;
+}
+
+.logo img {
+  position: absolute;
+  max-width: none;
+  object-fit: contain;
+}
+
+/* Copy column -------------------------------------------------- */
 .copy {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: start;
+  gap: 24px;
+  flex: 0 1 498px;
+  max-width: 498px;
+  text-align: right;
 }
 
 .title {
   font-size: var(--fs-40);
-  font-weight: 400;
-  line-height: 1.9;
-  color: var(--text-inverse);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--blue-dark);
+  width: 100%;
 }
 
 .lead {
-  margin-top: 39px;
-  font-size: var(--fs-24);
-  font-weight: 700;
-  line-height: 1.6;
-  color: var(--text-inverse);
-}
-
-.list {
-  width: 100%;
-  margin-top: 61px;
-  display: flex;
-  flex-direction: column;
-  gap: 20.5px;
-}
-
-.item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10.26px;
   font-size: var(--fs-18);
   font-weight: 400;
   line-height: 1.9;
-  color: var(--text-inverse-li);
-}
-
-.check {
-  flex-shrink: 0;
-  width: 28px;
-  height: 31px;
-  display: grid;
-  place-items: center;
-}
-
-.rule {
-  height: 1px;
+  color: var(--text-secondary);
   width: 100%;
-  background: var(--text-inverse);
 }
 
 .cta {
-  align-self: flex-start;
-  margin-top: 85px;
+  width: 198px;
+  height: 61px;
 }
 
-/* Platform grid column ------------------------------------------ */
-.gridWrap {
-  position: relative;
-  direction: ltr;
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 600 / 643;
-  margin-inline: auto;
-}
-
-/* Dashed vertical guides */
-.guides {
-  position: absolute;
-  inset: 0;
-  direction: ltr;
-  display: flex;
-  pointer-events: none;
-}
-
-/* Three rules at 0 / 33 / 66%, as on the artboard */
-.guides span {
-  width: 33.11%;
-  border-left: 0.832px dashed var(--blue-light-hover);
-  opacity: 0.55;
-}
-
-/* Connector artwork sitting behind the tiles */
-.lines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.lines img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.tiles {
-  position: absolute;
-  inset: 12% 3.6%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  column-gap: 7.85%;
-  row-gap: 10.1%;
-}
-
-.tile {
-  display: grid;
-  place-items: center;
-  background: var(--background-card);
-  border: 0.786px solid rgba(255, 255, 255, 0.32);
-  border-radius: 3.144px;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-}
-
-.tile:hover {
-  transform: translateY(-3px);
-}
-
-.tile img {
-  object-fit: contain;
-}
-
-/* Cropped fill (Figma applied a crop transform to this source image) */
-.cropped {
-  position: relative;
-  overflow: hidden;
-  width: 142px;
-  height: 64px;
-}
-
-.cropped img {
-  position: absolute;
-  top: -61.99%;
-  left: 0;
-  width: 100%;
-  height: 221.4%;
-  max-width: none;
-}
-
-/* Centre hexagon replaces the middle tile */
-/* The centre cell is the hexagon mark, not a platform tile */
-.hex {
-  position: relative;
-  display: grid;
-  place-items: center;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  overflow: visible;
-}
-
-.hex:hover {
-  transform: none;
-}
-
-.hexShape {
-  position: absolute;
-  inset: -22%;
-}
-
-.hexShape img {
-  width: 100%;
-  height: 100%;
-}
-
-.hexLogo {
-  position: relative;
-  width: 46%;
-  /* paired with the fluid width so the intrinsic ratio is preserved */
-  height: auto;
-}
-
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .layout {
-    grid-template-columns: 1fr;
-    gap: 64px;
+    gap: 56px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-block: 64px;
+  }
+
+  .layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .cluster {
+    flex: 0 0 auto;
+    width: min(460px, 100%);
   }
 
   .copy {
-    order: -1;
-  }
-}
-
-@media (max-width: 680px) {
-  .section {
-    padding-block: 72px;
-  }
-
-  .lead {
-    margin-top: 24px;
-  }
-
-  .list {
-    margin-top: 36px;
-  }
-
-  .cta {
-    margin-top: 48px;
-  }
-
-  .cropped {
-    width: 78%;
-    height: 40px;
+    flex: 0 0 auto;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
   }
 }

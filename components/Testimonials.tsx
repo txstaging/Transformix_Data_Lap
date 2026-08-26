@@ -26,7 +26,7 @@ export default function Testimonials() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <h2 className={styles.title}>تجارب حقيقية مع حلول AI تصنع فرقًا</h2>
+        <h2 className={styles.title}>تجارب حقيقية تصنع فرقًا</h2>
 
         <div className={styles.showcase}>
           <div className={styles.slab} aria-hidden="true" />

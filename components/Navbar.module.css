@@ -1,9 +1,8 @@
-/* Header — Figma "Background+HorizontalBorder" (260:1283) */
+/* Header — Figma "Background+HorizontalBorder" (1626:4669), 1440×82 on white */
 .header {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline: 0;
+  position: relative;
   z-index: 30;
+  background: var(--background-main);
   padding-inline: clamp(16px, 8.33vw, 120px);
 }
 
@@ -17,11 +16,12 @@
   margin-inline: auto;
 }
 
+/* Logo sits at the leading (right) edge in RTL */
 .logo {
   display: block;
   flex-shrink: 0;
-  width: 85px;
-  height: 54px;
+  width: 85.14px;
+  height: 54.355px;
 }
 
 .logo img {
@@ -44,17 +44,19 @@
   padding-inline: 16px;
   font-size: var(--fs-18);
   font-weight: 400;
-  color: var(--text-inverse);
+  color: var(--text-primary);
   white-space: nowrap;
-  transition: opacity 0.18s ease;
+  transition: color 0.18s ease;
 }
 
 .nav a:hover {
-  opacity: 0.75;
+  color: var(--primary);
 }
 
 .active {
+  color: var(--primary);
   text-decoration: underline;
+  text-decoration-thickness: 7.5%;
   text-underline-offset: 4px;
 }
 
@@ -67,10 +69,11 @@
 }
 
 .caret img {
-  width: 9.6px;
-  height: 5.07px;
+  width: 16px;
+  height: 16px;
 }
 
+/* Pill CTA at the trailing (left) edge */
 .cta {
   flex-shrink: 0;
   width: 126px;
@@ -91,7 +94,7 @@
   height: 44px;
   padding: 0;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--stroke);
   border-radius: 10px;
   place-items: center;
 }
@@ -100,7 +103,7 @@
   display: block;
   width: 20px;
   height: 2px;
-  background: #fff;
+  background: var(--text-primary);
   border-radius: 2px;
   transition: transform 0.22s ease, opacity 0.22s ease;
 }
@@ -141,10 +144,10 @@
     align-items: stretch;
     gap: 4px;
     padding: 16px;
-    background: var(--blue-dark-active);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: var(--background-main);
+    border: 1px solid var(--stroke);
     border-radius: 16px;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
   }
 
   .navOpen a {

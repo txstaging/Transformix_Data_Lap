@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <a href="#" className={styles.logo} aria-label="Transformix">
-          <Image src="/assets/logo.svg" alt="Transformix" width={85} height={54} priority />
+          <Image src="/assets/logo.svg" alt="Transformix" width={86} height={55} priority />
         </a>
 
         <nav className={`${styles.nav} ${open ? styles.navOpen : ""}`}>
@@ -31,20 +31,20 @@ export default function Navbar() {
               className={link.active ? styles.active : undefined}
               onClick={() => setOpen(false)}
             >
+              {link.label}
               {link.caret && (
                 <span className={styles.caret} aria-hidden="true">
-                  <Image src="/assets/nav-caret.svg" alt="" width={10} height={5} />
+                  <Image src="/assets/nav-caret.svg" alt="" width={16} height={16} />
                 </span>
               )}
-              {link.label}
             </a>
           ))}
-          <Button size="md" className={styles.ctaMobile} href="#contact">
+          <Button variant="primary" size="md" className={styles.ctaMobile} href="#contact">
             تواصل معنا
           </Button>
         </nav>
 
-        <Button size="md" className={styles.cta} href="#contact">
+        <Button variant="primary" size="md" className={styles.cta} href="#contact">
           تواصل معنا
         </Button>
 
