@@ -248,3 +248,72 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Mobile — Figma "Desktop - 141" (3094:11391): the diagram is kept, scaled
+   to 310px wide (0.2817 of the 1100 stage), instead of the stacked fallback.
+   Pill metrics are expressed in container units so they shrink with it. */
+@media (max-width: 640px) {
+  .section {
+    padding-block: 54px 92px;
+  }
+
+  .header {
+    gap: 5.7px;
+    margin-bottom: 28px;
+  }
+
+  /* one line on the 375 artboard; eases down on narrower phones */
+  .title {
+    font-size: min(18px, 4.8vw);
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: normal;
+    max-width: 265px;
+  }
+
+  /* "Button 15" scaled to 95.4 × 25.9 */
+  .cta {
+    margin-top: 8.6px;
+    width: 95.4px;
+    height: 25.9px;
+    font-size: 10px;
+    font-weight: 400;
+    border-width: 0.776px;
+    border-color: var(--blue-darker);
+    box-shadow: 0 0.388px 1.164px 0 rgba(0, 0, 0, 0.2),
+      inset 0 1.551px 0.776px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .stage {
+    display: block;
+    width: min(310px, 100%);
+    container-type: inline-size;
+  }
+
+  .stack {
+    display: none;
+  }
+
+  /* 16 / 12 / 36 / 18px on the 1100 stage */
+  .pill {
+    gap: 1.4545cqw;
+    padding: 1.4545cqw;
+    border-width: 0.28px;
+    border-radius: 1.0909cqw;
+  }
+
+  .pillIcon {
+    width: 3.2727cqw;
+    height: 3.2727cqw;
+  }
+
+  .pillLabel {
+    font-size: 1.6364cqw;
+    line-height: normal;
+  }
+}

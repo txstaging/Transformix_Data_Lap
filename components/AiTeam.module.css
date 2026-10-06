@@ -108,11 +108,24 @@
     padding-block: 56px 72px;
   }
 
-  .header {
+  /* Header dissolves so عرض المزيد can drop below the cards */
+  .inner {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  }
+
+  .header {
+    display: contents;
+  }
+
+  .title {
     margin-bottom: 32px;
+  }
+
+  .more {
+    order: 1;
+    align-self: center;
+    margin-top: 32px;
   }
 
   .grid {

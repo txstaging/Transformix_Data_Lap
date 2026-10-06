@@ -176,7 +176,7 @@
     grid-column: 1 / -1;
     width: 88px;
     height: 88px;
-    justify-self: center;
+    justify-self: right;
   }
 
   .stackIcon img {

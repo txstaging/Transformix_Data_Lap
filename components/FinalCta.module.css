@@ -77,3 +77,43 @@
     padding-block: 40px 0;
   }
 }
+
+/* Mobile — Figma "Desktop - 140" (3077:6907) */
+@media (max-width: 640px) {
+  .section {
+    gap: 17px;
+    padding-block: 68px;
+  }
+
+  .content {
+    gap: 3px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: normal;
+    max-width: 310px;
+  }
+
+  .text {
+    font-size: 12px;
+    line-height: normal;
+    max-width: 313px;
+  }
+
+  /* "Button 16" — the large pill scaled down to 99 × 30.5 */
+  .cta {
+    margin-top: 27px;
+    width: 99px;
+    height: 30.5px;
+    font-size: 8.231px;
+    border-width: 0.915px;
+    border-color: var(--blue-darker);
+    box-shadow: 0 0.457px 1.372px 0 rgba(0, 0, 0, 0.2),
+      inset 0 1.829px 0.915px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .mark {
+    width: 303px;
+  }
+}

@@ -4,21 +4,24 @@ import styles from "./Testimonials.module.css";
 const testimonials = [
   {
     quote:
-      "و ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص",
-    name: "Jacob Jones",
-    role: "Digital Marketer",
+      "بصفتي مدربة أسرية معتمدة، كنت أسعى لتعزيز علامتي التجارية الشخصية والتواصل مع المزيد من العائلات التي تحتاج إلى التوجيه. كان العمل مع شركة FUEX Solutions بمثابة نقطة تحول بالنسبة لي. فقد أدى نهجهم الاستراتيجي في التسويق عبر وسائل التواصل الاجتماعي إلى نمو ملحوظ بنسبة ⁦134.5%⁩ في عدد متابعي خلال ثلاثة أسابيع فقط",
+    name: "د/ ريم بخيت",
+    role: "مستشارة اجتماعية",
+    avatar: "/assets/testimonial-reem.png",
   },
   {
     quote:
-      "و ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص",
-    name: "Jacob Jones",
-    role: "Digital Marketer",
+      "يسعنا إلا أن نتقدم بجزيل الشكر لوكالتكم التسويقية على خدماتها المتميزة. لقد ساهمت أفكار فريقكم الإبداعية ونهجهم القائم على البيانات في تحقيق نتائج باهرة في فترة وجيزة. ارتفع تفاعل متابعينا على وسائل التواصل الاجتماعي بشكل ملحوظ، واكتسبت علامتنا التجارية قاعدة جماهيرية وفية.",
+    name: "يسرى بوغوس",
+    role: "",
+    avatar: "/assets/testimonial-yusra.png",
   },
   {
     quote:
-      "و ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص",
-    name: "Jacob Jones",
-    role: "Digital Marketer",
+      "لقد فاقت وكالة Fuex توقعاتي بخدماتها المتميزة فريقهم محترف، سريع الاستجابة، ويفهم تماما احتياجات عملائهم. لقد قدموا نتائج عالية الجودة في الوقت المحدد، وكان لإبداعهم وخبرتهم أثر بالغ. أوصي بشدة بوكالة Fuex لكل من يبحث عن حلول تسويقية من الطراز الأول.",
+    name: "د/روزانا البخاري",
+    role: "عبر بيكسفورت.",
+    avatar: "/assets/testimonial-rozana.png",
   },
 ];
 
@@ -44,12 +47,16 @@ export default function Testimonials() {
                 <blockquote className={styles.quote}>{item.quote}</blockquote>
                 <figcaption className={styles.person}>
                   <span className={styles.avatar}>
-                    <Image src="/assets/avatar.png" alt="" width={43} height={43} />
+                    <Image src={item.avatar} alt="" width={43} height={43} />
                   </span>
                   <span className={styles.meta}>
                     <span className={styles.name}>{item.name}</span>
-                    <br />
-                    <span className={styles.role}>{item.role}</span>
+                    {item.role && (
+                      <>
+                        <br />
+                        <span className={styles.role}>{item.role}</span>
+                      </>
+                    )}
                   </span>
                 </figcaption>
               </figure>

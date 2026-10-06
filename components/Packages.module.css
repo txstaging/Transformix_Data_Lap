@@ -96,12 +96,23 @@
   text-align: right;
 }
 
+/* "ابدأ" sits top-aligned; the other two variants centre the art on the copy */
+.panelCentered {
+  align-items: center;
+}
+
 .panelTitle {
   font-size: var(--fs-24);
   font-weight: 600;
   line-height: 1.55;
   color: var(--gray-900);
+  /* the title text box is 616px inside the 643px column */
   width: 100%;
+  max-width: 616px;
+}
+
+.panelTitleMedium {
+  font-weight: 500;
 }
 
 .points {

@@ -23,12 +23,22 @@ const agents = [
 export default function AiTeam() {
   return (
     <section className={styles.section} id="platforms">
-      <div className="container">
+      <div className={`container ${styles.inner}`}>
         <div className={styles.header}>
           <h2 className={styles.title}>فريق ذكاء اصطناعي مصمم لأعمالك</h2>
-          <a href="#" className={styles.more}>
-            <Image src="/assets/chevrons-left.svg" alt="" width={24} height={24} />
+          <a
+            href="https://ai.thetransformix.com/ai-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.more}
+          >
             عرض المزيد
+            <Image
+              src="/assets/chevrons-left.svg"
+              alt=""
+              width={24}
+              height={24}
+            />
           </a>
         </div>
 
@@ -47,7 +57,12 @@ export default function AiTeam() {
                 <h3 className={styles.cardTitle}>{agent.title}</h3>
                 <p className={styles.cardText}>{agent.text}</p>
               </div>
-              <Button variant="primary" size="sm" className={styles.cardCta} href="#">
+              <Button
+                variant="primary"
+                size="sm"
+                className={styles.cardCta}
+                href="#"
+              >
                 عرض الموقع
               </Button>
             </article>

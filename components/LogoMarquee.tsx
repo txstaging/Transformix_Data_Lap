@@ -7,7 +7,11 @@ import styles from "./LogoMarquee.module.css";
  */
 const logos = [
   { src: "/assets/mq-barq.png", alt: "Barq", frame: { w: 66, h: 66 } },
-  { src: "/assets/mq-thermo.png", alt: "Thermo Integrated", frame: { w: 70, h: 70 } },
+  {
+    src: "/assets/mq-thermo.png",
+    alt: "Thermo Integrated",
+    frame: { w: 70, h: 70 },
+  },
   {
     src: "/assets/mq-tourguides.png",
     alt: "تعاونية المرشدين السياحيين",
@@ -17,12 +21,12 @@ const logos = [
   { src: "/assets/mq-48.png", alt: "Client", frame: { w: 150, h: 64 } },
   { src: "/assets/mq-45.png", alt: "Client", frame: { w: 120, h: 43 } },
   { src: "/assets/mq-seal.png", alt: "Client", frame: { w: 85, h: 74 } },
-  {
-    src: "/assets/mq-ibdl.png",
-    alt: "IBDL",
-    frame: { w: 201, h: 76 },
-    crop: { top: "-85.57%", left: "0", w: "100%", h: "264.06%" },
-  },
+  // {
+  //   src: "/assets/mq-ibdl.png",
+  //   alt: "IBDL",
+  //   frame: { w: 201, h: 76 },
+  //   crop: { top: "-85.57%", left: "0", w: "100%", h: "264.06%" },
+  // },
 ];
 
 export default function LogoMarquee() {

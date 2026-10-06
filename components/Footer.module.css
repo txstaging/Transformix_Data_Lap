@@ -139,6 +139,15 @@
   text-align: center;
 }
 
+/* Mobile-only pieces (3077:2839) stay out of the desktop layout */
+.mobileLogo,
+.mobileText,
+.mobileIcon,
+.mobileRow,
+.mobileSocials {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .footer {
     padding-block: 56px 28px;
@@ -166,5 +175,158 @@
 
   .divider {
     margin-block: 36px 20px;
+  }
+}
+
+/* Mobile — Figma "Footer" (3077:2839): centred brand, stacked columns, a
+   centred social row and a hairline above the copyright */
+@media (max-width: 640px) {
+  .footer {
+    margin-top: 100px;
+    padding-block: 64px 32px;
+  }
+
+  .footer > :global(.container) {
+    padding-inline: 24px;
+  }
+
+  .top {
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .brand {
+    align-items: center;
+    gap: 0;
+  }
+
+  .logo,
+  .desktopText,
+  .desktopIcon,
+  .followCol {
+    display: none;
+  }
+
+  .mobileLogo {
+    display: block;
+    position: relative;
+    width: 140px;
+    height: 90px;
+    margin-bottom: 24px;
+  }
+
+  .mobileLogo img {
+    position: absolute;
+  }
+
+  .mLogo1 {
+    left: 0;
+    top: 10px;
+  }
+
+  .mLogo2 {
+    left: 15px;
+    top: 10px;
+  }
+
+  .mLogo3 {
+    right: 0;
+    top: 0;
+  }
+
+  .mLogo4 {
+    left: 15px;
+    top: 25px;
+  }
+
+  .mobileText {
+    display: inline;
+  }
+
+  .tagline {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-inverse);
+    text-align: center;
+  }
+
+  .cols {
+    flex-direction: column;
+    gap: 32px;
+    /* the 320px column box sits 7px in from the 327px content edge */
+    padding-block-start: 16px;
+    padding-inline-start: 7px;
+  }
+
+  .colTitle {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 24px;
+  }
+
+  .links {
+    gap: 12px;
+    opacity: 1;
+  }
+
+  .links a,
+  .contactRow span {
+    font-size: 14px;
+    line-height: 20px;
+    color: #fef8eb;
+  }
+
+  .contact {
+    gap: 16px;
+  }
+
+  .contactRow {
+    gap: 12px;
+  }
+
+  /* icons are 20×16 / 20×20 / 16×20 — hug each so the 12px gap is exact */
+  .contactIcon {
+    width: auto;
+    height: auto;
+  }
+
+  .mobileIcon {
+    display: block;
+  }
+
+  .mobileRow {
+    display: flex;
+  }
+
+  /* Facebook → Instagram → LinkedIn → Behance reads left-to-right */
+  .mobileSocials {
+    direction: ltr;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 16px;
+    margin-top: 32px;
+  }
+
+  .mobileSocials a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.18s ease;
+  }
+
+  .mobileSocials a:hover {
+    opacity: 0.7;
+  }
+
+  .divider {
+    margin-block: 32px 9px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .copyright {
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
   }
 }
