@@ -2,13 +2,6 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./GrowthCta.module.css";
 
-/**
- * "جاهز تحوّل بياناتك…" + the four-step path — Figma "Desktop - 66" (1626:4999).
- *
- * The path is one 1235-wide stroke with the arrow head baked in; the icons and
- * labels sit on top of it. Everything is a percentage of the 1251.567 × 332
- * artboard so the diagram scales as a single piece.
- */
 const icons = [
   { src: "/assets/step-1.png", alt: "", left: 8.629, top: 42.319, w: 8.869, h: 33.434, round: true },
   { src: "/assets/step-2.png", alt: "", left: 57.928, top: 42.169, w: 8.949, h: 33.735 },
@@ -16,7 +9,6 @@ const icons = [
   { src: "/assets/step-4.png", alt: "", left: 84.253, top: 5.12, w: 8.469, h: 25.301 },
 ];
 
-// Anchored by the badge edge, exactly where the artboard puts each number
 const steps = [
   { n: 1, label: "نفهم احتياجات وتحديات عملك.", right: 0.365, top: 50.904 },
   { n: 2, label: "نفهم احتياجات وتحديات عملك.", right: 26.09, top: 87.349 },
@@ -81,7 +73,6 @@ export default function GrowthCta() {
           ))}
         </div>
 
-        {/* Same four steps, stacked, once the path stops fitting */}
         <ol className={styles.stack}>
           {steps.map((step, i) => (
             <li className={styles.stackItem} key={step.n}>

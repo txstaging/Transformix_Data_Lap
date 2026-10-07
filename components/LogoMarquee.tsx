@@ -1,10 +1,5 @@
 import styles from "./LogoMarquee.module.css";
 
-/**
- * Client logos — Figma "Section" (1626:4704). `frame` is the box the canvas
- * lays each logo out in; `crop` reproduces the image-fill transform applied to
- * the source PNG so the logo sits exactly as it does on the artboard.
- */
 const logos = [
   { src: "/assets/mq-barq.png", alt: "Barq", frame: { w: 66, h: 66 } },
   {

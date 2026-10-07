@@ -1,4 +1,3 @@
-/* Testimonials — Figma "Section 04" (260:1591) */
 .section {
   background: var(--testimonials-bg);
   padding-block: 65px 145px;
@@ -15,7 +14,6 @@
   margin-bottom: 73px;
 }
 
-/* Cards sit on a blue slab that peeks out top and bottom */
 .showcase {
   position: relative;
   padding-block: 40px 49px;
@@ -145,8 +143,6 @@
   }
 }
 
-/* Mobile — Figma "Desktop - 139" (3077:6797): the whole section turns into
-   the blue slab, cards stack on it with the person block on the leading edge */
 @media (max-width: 640px) {
   .section {
     background: var(--testimonials-bg);

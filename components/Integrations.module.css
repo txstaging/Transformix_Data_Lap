@@ -1,4 +1,3 @@
-/* Integrations — Figma "Desktop - 73" (1626:4965) */
 .section {
   background: var(--background-main);
   padding-block: 100px;
@@ -11,7 +10,6 @@
   gap: 125px;
 }
 
-/* Logo cluster — 617 × 637 on the artboard --------------------- */
 .cluster {
   position: relative;
   direction: ltr;
@@ -20,11 +18,10 @@
   aspect-ratio: 617 / 637;
 }
 
-/* Merged wells the canvas draws behind four of the logos */
 .blob {
   position: absolute;
-  width: 65.01%; /* 401.105 / 617 */
-  height: 63.27%; /* 403 / 637 */
+  width: 65.01%;
+  height: 63.27%;
 }
 
 .blobA {
@@ -37,11 +34,10 @@
   top: 33.99%;
 }
 
-/* Standalone 193px wells */
 .well {
   position: absolute;
-  width: 31.28%; /* 193 / 617 */
-  height: 30.3%; /* 193 / 637 */
+  width: 31.28%;
+  height: 30.3%;
   border-radius: 100px;
   background: var(--background-card);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
@@ -59,7 +55,6 @@
   object-fit: contain;
 }
 
-/* Copy column -------------------------------------------------- */
 .copy {
   display: flex;
   flex-direction: column;

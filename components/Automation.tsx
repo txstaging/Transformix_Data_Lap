@@ -2,14 +2,6 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./Automation.module.css";
 
-/**
- * "اتمتة تساعد علي الاستجابة بشكل اسرع" — Figma "Desktop - 71" (1626:4839).
- *
- * The diagram is an absolutely positioned 1100 × 404 stage: every box below is
- * expressed as a percentage of that artboard so the whole thing scales as one
- * piece. `line` boxes carry the connector's own overflow insets, exactly as the
- * canvas applies them.
- */
 const automated = [
   { label: "متابعة تلقائية ومستمرة", icon: "/assets/auto-ic-b1.svg" },
   { label: "تقرير ٍالي جاهز", icon: "/assets/auto-ic-b2.svg" },
@@ -42,7 +34,6 @@ const lines: Line[] = [
   { src: "/assets/auto-line-g4.svg", box: [54.727, 67.327, 16.091, 26.238], img: [-4.52, -1.39, 104.67, 108.32], flip: true },
 ];
 
-// Pill tops: 0 / 116 / 232 / 348 of the 404-tall stage
 const pillTop = [0, 28.713, 57.426, 86.139];
 
 function Pill({ label, icon, tone }: { label: string; icon: string; tone: "blue" | "gray" }) {
@@ -98,7 +89,6 @@ export default function Automation() {
             </span>
           ))}
 
-          {/* Two halves of the brain, each cropped inside its own box */}
           <span className={`${styles.brain} ${styles.brainBlue}`} aria-hidden="true">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/brain-blue.png" alt="" />
@@ -129,7 +119,6 @@ export default function Automation() {
           ))}
         </div>
 
-        {/* Same content, stacked, once the stage stops fitting */}
         <div className={styles.stack}>
           <div className={styles.stackBrain}>
             {/* eslint-disable-next-line @next/next/no-img-element */}

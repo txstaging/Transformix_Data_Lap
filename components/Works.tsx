@@ -2,11 +2,6 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./Works.module.css";
 
-/**
- * Case studies — Figma "Desktop - 76" (1626:5038). Listed in visual RTL order:
- * the first card sits top-right. `crop` reproduces the image-fill transform the
- * canvas applies inside each card's plate.
- */
 const works = [
   {
     title: "تحليل محادثات العملاء للكشف عن فرص النمو وتحسين المبيعات",

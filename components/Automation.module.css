@@ -1,4 +1,3 @@
-/* Automation — Figma "Desktop - 71" (1626:4839) */
 .section {
   background: var(--background-main);
   padding-block: 100px;
@@ -34,7 +33,6 @@
   height: 61px;
 }
 
-/* Diagram stage — 1100 × 404 on the artboard ------------------- */
 .stage {
   position: relative;
   direction: ltr;
@@ -72,7 +70,6 @@
   display: block;
 }
 
-/* Left half: 173.505 × 204 at (381, 130) */
 .brainBlue {
   left: 34.636%;
   width: 15.773%;
@@ -85,7 +82,6 @@
   height: 103.87%;
 }
 
-/* Right half: 142.438 × 204 at (553.93, 130) */
 .brainGray {
   left: 50.357%;
   width: 12.949%;
@@ -98,7 +94,6 @@
   height: 100.03%;
 }
 
-/* Pill slots — 285 wide, 56 tall */
 .slot {
   position: absolute;
   width: 25.909%;
@@ -158,7 +153,6 @@
   white-space: nowrap;
 }
 
-/* Stacked fallback ---------------------------------------------- */
 .stack {
   display: none;
 }
@@ -249,9 +243,8 @@
   }
 }
 
-/* Mobile — Figma "Desktop - 141" (3094:11391): the diagram is kept, scaled
-   to 310px wide (0.2817 of the 1100 stage), instead of the stacked fallback.
-   Pill metrics are expressed in container units so they shrink with it. */
+/* The diagram is scaled down instead of stacked; pill metrics use
+   container units so they shrink with it. */
 @media (max-width: 640px) {
   .section {
     padding-block: 54px 92px;
@@ -262,7 +255,6 @@
     margin-bottom: 28px;
   }
 
-  /* one line on the 375 artboard; eases down on narrower phones */
   .title {
     font-size: min(18px, 4.8vw);
     font-weight: 700;
@@ -276,7 +268,6 @@
     max-width: 265px;
   }
 
-  /* "Button 15" scaled to 95.4 × 25.9 */
   .cta {
     margin-top: 8.6px;
     width: 95.4px;
@@ -299,7 +290,6 @@
     display: none;
   }
 
-  /* 16 / 12 / 36 / 18px on the 1100 stage */
   .pill {
     gap: 1.4545cqw;
     padding: 1.4545cqw;

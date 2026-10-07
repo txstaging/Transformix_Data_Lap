@@ -1,4 +1,3 @@
-/* Header — Figma "Background+HorizontalBorder" (1626:4669), 1440×82 on white */
 .header {
   position: relative;
   z-index: 30;
@@ -16,7 +15,6 @@
   margin-inline: auto;
 }
 
-/* Logo sits at the leading (right) edge in RTL */
 .logo {
   display: block;
   flex-shrink: 0;
@@ -30,7 +28,6 @@
   object-fit: contain;
 }
 
-/* Desktop navigation ------------------------------------------- */
 .nav {
   display: flex;
   align-items: center;
@@ -73,7 +70,6 @@
   height: 16px;
 }
 
-/* Pill CTA at the trailing (left) edge */
 .cta {
   flex-shrink: 0;
   width: 126px;
@@ -87,33 +83,33 @@
   display: none;
 }
 
-/* Mobile toggle ------------------------------------------------- */
 .burger {
   display: none;
-  width: 44px;
-  height: 44px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
   padding: 0;
   background: transparent;
-  border: 1px solid var(--stroke);
-  border-radius: 10px;
-  place-items: center;
+  border: 1.5px solid var(--text-primary);
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .burger span {
   display: block;
-  width: 20px;
-  height: 2px;
+  width: 16px;
+  height: 1.5px;
   background: var(--text-primary);
   border-radius: 2px;
   transition: transform 0.22s ease, opacity 0.22s ease;
 }
 
-.burger span + span {
-  margin-top: 4px;
-}
-
 .burgerOpen span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(5.5px) rotate(45deg);
 }
 
 .burgerOpen span:nth-child(2) {
@@ -121,7 +117,7 @@
 }
 
 .burgerOpen span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-5.5px) rotate(-45deg);
 }
 
 @media (max-width: 1100px) {
@@ -131,10 +127,9 @@
   }
 
   .burger {
-    display: grid;
+    display: flex;
   }
 
-  /* Mobile panel */
   .navOpen {
     position: absolute;
     inset-inline: clamp(16px, 8.33vw, 120px);

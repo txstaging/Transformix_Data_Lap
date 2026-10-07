@@ -2,14 +2,6 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./Integrations.module.css";
 
-/**
- * Platform cluster — Figma "Desktop - 73" (1626:4965).
- *
- * The canvas draws four of the nine wells as two merged "Union" blobs and the
- * other five as standalone circles; every logo is then dropped on top at its
- * own size. Positions are percentages of the 617 × 637 cluster so it scales as
- * one piece.
- */
 const CW = 617; // cluster width on the artboard
 const CH = 637; // cluster height
 
@@ -22,7 +14,6 @@ type Logo = {
   y: number;
   w: number;
   h: number;
-  /** overflow crop the canvas applies to the source image */
   crop?: { left: string; top: string; w: string; h: string };
 };
 
@@ -54,7 +45,6 @@ const logos: Logo[] = [
   { src: "/assets/int2-whatsapp.png", alt: "WhatsApp", x: 476, y: 495, w: 92, h: 92 },
 ];
 
-// The five wells the canvas draws as discrete circles (193px each)
 const wells = [
   { x: 213, y: 4 },
   { x: 419, y: 4 },

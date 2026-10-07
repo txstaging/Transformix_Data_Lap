@@ -5,9 +5,6 @@ import Image from "next/image";
 import Button from "./Button";
 import styles from "./Packages.module.css";
 
-/* Figma component "Component 15" (1586:2353) — one variant per tab.
-   Tabs run right-to-left on the artboard; points are listed in visual RTL
-   order (first item sits top-right). */
 const packages = [
   {
     id: "start",

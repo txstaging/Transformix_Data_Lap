@@ -64,11 +64,11 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className={styles.linkWrap}>
+        {/* <div className={styles.linkWrap}>
           <a href="#" className={styles.link}>
             رؤية جميع الاراء
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

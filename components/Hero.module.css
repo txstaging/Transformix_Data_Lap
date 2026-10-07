@@ -1,4 +1,3 @@
-/* Hero — Figma "Desktop - 75" (1626:4667), 1440×1009 artboard on white */
 .hero {
   position: relative;
   display: flex;
@@ -13,7 +12,6 @@
   align-items: center;
   gap: 24px;
   width: 100%;
-  /* 1000px content block, top edge 164px down the artboard */
   max-width: calc(1000px + var(--gutter) * 2);
   margin-inline: auto;
   padding: 82px var(--gutter) 0;
@@ -36,7 +34,6 @@
   max-width: 642px;
 }
 
-/* Video plate — 884 × 478 on the artboard, centred, top edge at y=455 */
 .videoWrap {
   width: min(884px, calc(100% - var(--gutter) * 2));
   aspect-ratio: 884 / 478;

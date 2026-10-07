@@ -1,9 +1,4 @@
-/* ---------------------------------------------------------------
-   Design tokens — mirrored from the Figma variable collection
-   (transformix-2 · node 260:1276)
-   --------------------------------------------------------------- */
 :root {
-  /* Foundation / Blue */
   --primary: #1c4499;
   --blue-dark: #153373;
   --blue-dark-hover: #11295c;
@@ -13,15 +8,12 @@
   --blue-light-hover: #dde3f0;
   --blue-light-active: #b9c5df;
 
-
-  /* Surfaces */
   --background-main: #ffffff;
   --background-card: #fcfbfa;
   --hero-overlay: rgba(19, 40, 84, 0.8);
   --cta-navy: #10224a;
   --testimonials-bg: #ffffff;
 
-  /* Text */
   --text-primary: #1a1a1a;
   --text-inverse: #ffffff;
   --text-inverse-li: #dadada;
@@ -30,12 +22,10 @@
   --gray-600: #52525b;
   --white-normal: #f5f5f5;
 
-  /* Lines */
   --stroke: #e5e7eb;
   --stroke-card: #dedede;
   --gray-pill: #9a9a99;
 
-  /* Layout */
   --container: 1240px;
   --gutter: clamp(16px, 6.94vw, 100px);
   --radius-pill: 29.266px;
@@ -102,7 +92,6 @@ button {
   cursor: pointer;
 }
 
-/* Shared page container — 1240px of content inside the 1440px artboard */
 .container {
   width: 100%;
   max-width: calc(var(--container) + var(--gutter) * 2);

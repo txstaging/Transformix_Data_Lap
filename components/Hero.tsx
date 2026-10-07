@@ -18,7 +18,6 @@ export default function Hero() {
         </Button>
       </div>
 
-      {/* 884 × 478 plate on the artboard — the video fills it and crops */}
       <div className={styles.videoWrap}>
         <video
           className={styles.video}

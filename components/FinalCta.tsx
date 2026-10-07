@@ -14,7 +14,6 @@ export default function FinalCta() {
         </Button>
       </div>
 
-      {/* 720 × 528 plate on the artboard */}
       <div className={styles.mark} aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/assets/cta-logo.png" alt="" />

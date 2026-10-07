@@ -9,7 +9,6 @@ const socials = [
   { src: "/assets/ic-facebook.svg", label: "Facebook" },
 ];
 
-/* Mobile footer (3077:2839) carries its own icon set, left-to-right as drawn */
 const mobileSocials = [
   { src: "/assets/social-facebook.svg", label: "Facebook" },
   { src: "/assets/social-instagram.svg", label: "Instagram" },
@@ -29,7 +28,6 @@ export default function Footer() {
             <div className={styles.logo}>
               <Image src="/assets/footer-logo.svg" alt="Transformix" width={133} height={85} />
             </div>
-            {/* Mobile mark is drawn as four stacked layers on a 140 × 90 box */}
             <div className={styles.mobileLogo} role="img" aria-label="Transformix">
               <Image className={styles.mLogo1} src="/assets/footer-m-logo-1.svg" alt="" width={110} height={45} />
               <Image className={styles.mLogo2} src="/assets/footer-m-logo-2.svg" alt="" width={115} height={80} />

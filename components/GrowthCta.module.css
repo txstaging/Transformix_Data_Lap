@@ -1,4 +1,3 @@
-/* Growth CTA + process path — Figma "Desktop - 66" (1626:4999) */
 .section {
   background: var(--background-main);
   padding-block: 100px;
@@ -35,7 +34,6 @@
   height: 61px;
 }
 
-/* Path stage — 1251.567 × 332 on the artboard ------------------ */
 .stage {
   position: relative;
   direction: ltr;
@@ -99,7 +97,6 @@
   border-radius: 56px;
 }
 
-/* Numbered labels ---------------------------------------------- */
 .step {
   position: absolute;
   display: flex;
@@ -131,7 +128,6 @@
   white-space: nowrap;
 }
 
-/* Stacked fallback ---------------------------------------------- */
 .stack {
   display: none;
 }

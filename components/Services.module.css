@@ -1,4 +1,3 @@
-/* Services — Figma "Desktop - 6" (1626:4760) */
 .section {
   background: var(--background-main);
   padding-block: 120px 100px;
@@ -34,7 +33,6 @@
   gap: 32px;
 }
 
-/* 604 × 342 on the artboard: 40px padding, 1.5px hairline */
 .card {
   display: flex;
   flex-direction: column;
@@ -73,7 +71,6 @@
   object-fit: cover;
 }
 
-/* Sits opposite the icon; the artboard leaves it unfilled at rest */
 .arrow {
   display: grid;
   place-items: center;

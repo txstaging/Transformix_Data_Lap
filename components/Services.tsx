@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./Services.module.css";
 
-// DOM order is visual order: in RTL the first card sits top-right.
 const services = [
   {
     title: "تطوير الذكاء الاصطناعي التوليدي",
@@ -44,7 +43,6 @@ export default function Services() {
                 <span className={styles.icon}>
                   <Image src={service.icon} alt="" width={100} height={100} />
                 </span>
-                {/* Revealed on hover, opposite the icon */}
                 <span className={styles.arrow} aria-hidden="true">
                   <Image src="/assets/circle-arrow-left.svg" alt="" width={32} height={32} />
                 </span>
